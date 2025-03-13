@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cayden France</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iYmxhY2siLz48cGF0aCBkPSJNMzUsMjAgQTMwLDMwIDAgMSwwIDM1LDgwIEEyMCwyMCAwIDEsMSAzNSw0MCBaIiBmaWxsPSJ3aGl0ZSIvPjxwYXRoIGQ9Ik02NSwzMCBMNDUsNTAgTDY1LDcwIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjEwIiBmaWxsPSJub25lIi8+PC9zdmc+" type="image/svg+xml">
+
+    <script>
+  function setFavicon() {
+    var link = document.querySelector('link[rel="icon"]');
+    if (link) {
+      var parent = link.parentNode;
+      var newLink = link.cloneNode(true);
+      parent.removeChild(link);
+      parent.appendChild(newLink);
+    }
+  }
+
+  window.addEventListener('load', setFavicon);
+  setTimeout(setFavicon, 1000);
+</script>
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px 0;">
+                <h1>CAYDEN<span class="accent-color">FRANCE</span></h1>
+
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                    <div class="theme-switcher-container">
+                         <label class="switch">
+                             <input type="checkbox" id="themeSwitch">
+                             <span class="slider"></span>
+                             <span class="decoration"></span>
+                         </label>
+                    </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="home">
+        <div class="container" style="text-align: center;">
+            <p style="color: var(--accent-color); font-weight: 600; text-transform: uppercase;">WELCOME TO MY ABODE</p>
+            <h2 style="font-size: 48px; margin: 20px 0;">Hi, I'm <span class="accent-color">Cayden France</span></h2>
+            <p style="font-size: 20px; max-width: 800px; margin: 0 auto 30px;">I'm a passionate web developer specializing in creating elegant and functional websites and applications.</p>
+
+            <div style="margin-bottom: 40px;">
+                <a href="#contact" class="btn btn-primary">Hire Me</a>
+                <a href="#projects" class="btn btn-secondary" style="margin-left: 15px;">Some Of My Work</a>
+            </div>
+
+            <div style="display: flex; gap: 20px; justify-content: center;">
+                <a href="https://x.com/cfcodinginspire" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/cayden-france-3b261833a/" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/caydenFranceCoding" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+    <div class="container" style="position: relative; overflow: hidden;">
+        <h2 class="section-title">About <span class="accent-color">Me</span></h2>
+        <div class="section-divider"></div>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
+            <div style="flex: 1; min-width: 300px;" class="animate fade-in-left">
+                <div class="profile-parent">
+                    <div class="profile-card">
+                        <div class="profile-content-box">
+                            <div class="profile-image">
+                                <img src="aboutme.jpeg" alt="Cayden France">
+                            </div>
+                        </div>
+
+                        <div class="profile-accent">
+                            <span>CF</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="flex: 1; min-width: 300px;" class="animate fade-in-right">
+                <p style="font-size: 18px; line-height: 1.6; margin-bottom: 20px;" class="animate fade-in-right delay-200">
+                    Hello! I'm Cayden France, a web developer and SWE based in Dallas, Texas. I enjoy creating things that live on the internet, whether that be websites, applications, or anything in between. My goal is to always build products that look just as good as your significant other.
+                </p>
+
+                <p style="font-size: 18px; line-height: 1.6; margin-bottom: 30px;" class="animate fade-in-right delay-400">
+                    I'm happiest when I'm creating, learning, exploring and thinking about how to make things better. I have 2 years of experience in web development with a strong focus on responsive design and modern JavaScript frameworks.
+                </p>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px;" class="animate fade-in-right delay-600">
+                    <div>
+                        <h3 style="font-size: 18px; margin-bottom: 5px;">Name:</h3>
+                        <p>Cayden Lane France</p>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 18px; margin-bottom: 5px;">Email:</h3>
+                        <p>cfcodinginspire@gmail.com</p>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 18px; margin-bottom: 5px;">Location:</h3>
+                        <p>Dallas, Texas</p>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 18px; margin-bottom: 5px;">Availability:</h3>
+                        <p>Freelance / Full-time</p>
+                    </div>
+                </div>
+
+                <a href="#" class="btn btn-primary animate fade-in-right delay-600">Download Resume</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">My <span class="accent-color">Skills</span></h2>
+            <div class="section-divider"></div>
+            <p class="section-description">I've worked with a variety of technologies in the web development world, Fullstack.</p>
+
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-html5 fa-2x"></i>
+                    </div>
+                    <h3 style="font-size: 20px; margin-bottom: 15px;">HTML5</h3>
+                    <p style="color: #666;">Semantic markup and accessibility</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-css3-alt fa-2x"></i>
+                    </div>
+                    <h3 style="font-size: 20px; margin-bottom: 15px;">CSS3</h3>
+                    <p style="color: #666;">Responsive designs and animations</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-js fa-2x"></i>
+                    </div>
+                    <h3 style="font-size: 20px; margin-bottom: 15px;">JavaScript</h3>
+                    <p style="color: #666;">ES6+ and modern frameworks</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-react fa-2x"></i>
+                    </div>
+                    <h3 style="font-size: 20px; margin-bottom: 15px;">React.js</h3>
+                    <p style="color: #666;">Component-based UI development</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-node-js fa-2x"></i>
+                    </div>
+                    <h3 style="font-size: 20px; margin-bottom: 15px;">Node.js</h3>
+                    <p style="color: #666;">Server-side JavaScript</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-database fa-2x"></i>
+                    </div>
+                    <h3 style="font-size: 20px; margin-bottom: 15px;">MongoDB</h3>
+                    <p style="color: #666;">NoSQL database management</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-git-alt fa-2x"></i>
+                    </div>
+                    <h3 style="font-size: 20px; margin-bottom: 15px;">Git</h3>
+                    <p style="color: #666;">Version control and collaboration</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-figma fa-2x"></i>
+                    </div>
+                    <h3 style="font-size: 20px; margin-bottom: 15px;">Figma</h3>
+                    <p style="color: #666;">UI/UX design and prototyping</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">My <span class="accent-color">Projects</span></h2>
+            <div class="section-divider"></div>
+            <p class="section-description">Here are some of my recent projects. Each project reflects my passion for creating intuitive web applications.</p>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="pic1.png" alt="StuddieBuddies" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">StuddieBuddies</h3>
+                        <p class="project-description">A full UNDER CONSTRUCTION app for college students to gain connections and grow together with people in their related field. Active tutoring and homework help as well.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">React.js</span>
+                            <span class="project-tag">Node.js</span>
+                            <span class="project-tag">MongoDB</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Adding Soon</a>
+                            <a href="#" class="project-link"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="pic4.png" alt="Respite Care Site" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">ElevatingEmpowerCare</h3>
+                        <p class="project-description">A website I did for a client. Includes modern designs, using tailwind, Javascript and React.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">Tailwind</span>
+                            <span class="project-tag">React</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://www.elevatingempowercare.com" target="_blank" class="project-link">View Website</a>
+                            <a href="https://github.com/caydenFranceCoding/FinalEmpowerCareUpdate" target="_blank" class="project-link">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="pic2.png" alt="Snake Game" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Java Script Snake Game</h3>
+                        <p class="project-description">A game where you control a snake and eat food without dying.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS3</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Adding Soon</a>
+                            <a href="#" class="project-link"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 50px; text-align: center;">
+                <a href="#" class="btn btn-primary">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In <span class="accent-color">Touch</span></h2>
+            <div class="section-divider"></div>
+            <p class="section-description">Feel free to contact me for any work or suggestions below.</p>
+
+            <div class="contact-grid">
+                <div class="contact-form">
+                    <form class="form-container">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" id="subject" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" rows="5" class="form-textarea"></textarea>
+                        </div>
+                        <button type="submit" class="form-button">Send Message</button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <div class="contact-info-container">
+                        <h3 class="contact-info-title">Contact Information</h3>
+
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="contact-label">Location</h4>
+                                <p class="contact-value">Dallas, Texas</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="contact-label">Email</h4>
+                                <p class="contact-value">cfcodinginspire@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="contact-label">Phone</h4>
+                                <p class="contact-value">+1 (469)-596-2502</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div>
+                                <h4 class="contact-label">Website</h4>
+                                <p class="contact-value"></p>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 40px;">
+                            <h4 style="font-size: 18px; margin-bottom: 15px;">Follow Me</h4>
+                            <div class="social-icons">
+                                <a href="https://x.com/cfcodinginspire" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                <a href="https://www.linkedin.com/in/cayden-france-3b261833a/" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://github.com/caydenFranceCoding" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h2 class="footer-title">CAYDEN<span class="accent-color">FRANCE</span></h2>
+                    <p class="footer-tagline">Web Developer & Designer</p>
+                </div>
+
+                <div class="footer-social">
+                    <a href="https://x.com/cfcodinginspire" target="_blank" class="footer-social-link">
+                        <i class="fab fa-twitter fa-lg"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/cayden-france-3b261833a/" target="_blank" class="footer-social-link">
+                        <i class="fab fa-linkedin-in fa-lg"></i>
+                    </a>
+                    <a href="https://github.com/caydenFranceCoding" target="_blank" class="footer-social-link">
+                        <i class="fab fa-github fa-lg"></i>
+                    </a>
+                    <a href="#" class="footer-social-link">
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2025 Cayden France. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#home" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <script src="/src/App.js"></script>
+</body>
+</html>
