@@ -10,6 +10,67 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iYmxhY2siLz48cGF0aCBkPSJNMzUsMjAgQTMwLDMwIDAgMSwwIDM1LDgwIEEyMCwyMCAwIDEsMSAzNSw0MCBaIiBmaWxsPSJ3aGl0ZSIvPjxwYXRoIGQ9Ik02NSwzMCBMNDUsNTAgTDY1LDcwIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjEwIiBmaWxsPSJub25lIi8+PC9zdmc+" type="image/svg+xml">
+    <style>
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  mix-blend-mode: difference;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease, opacity 0.2s ease;
+}
+
+.custom-cursor::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.custom-cursor.cursor-hover {
+  transform: translate(-50%, -50%) scale(1.5);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.custom-cursor.cursor-hover::after {
+  transform: translate(-50%, -50%) scale(0.7);
+}
+
+.custom-cursor.cursor-text {
+  width: 2px;
+  height: 24px;
+  border-radius: 0;
+  background-color: #fff;
+}
+
+.custom-cursor.cursor-text::after {
+  display: none;
+}
+
+html {
+  cursor: none;
+}
+
+@media (hover: none) {
+  .custom-cursor {
+    display: none;
+  }
+  
+  html {
+    cursor: auto;
+  }
+}
+</style>
+
 </head>
 <body>
     <header>
@@ -176,7 +237,8 @@ document.addEventListener('DOMContentLoaded', function () {
   initBackToTop();
   initActiveNavLinks();
   initAnimations();
-
+  initCustomCursor(); // Added custom cursor initialization
+  
   // Check if any project filters exist and initialize them
   const filterButtons = document.querySelectorAll('.filter-btn');
   if (filterButtons.length > 0) {
@@ -187,6 +249,7 @@ document.addEventListener('DOMContentLoaded', function () {
 function initAnimations() {
   // Get all elements with animate class
   const animatedElements = document.querySelectorAll('.animate');
+  if (!animatedElements.length) return;
 
   // Function to check if an element is in viewport
   function isInViewport(element) {
@@ -243,6 +306,8 @@ function initThemeSwitcher() {
 function initActiveNavLinks() {
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('nav a[href^="#"]');
+  
+  if (!sections.length || !navLinks.length) return;
 
   function highlightNavLinks() {
     // Get current scroll position
@@ -330,6 +395,82 @@ function initProjectFilters() {
       });
     });
   });
+}
+
+function initCustomCursor() {
+  // Create cursor element
+  const cursor = document.createElement('div');
+  cursor.classList.add('custom-cursor');
+  document.body.appendChild(cursor);
+
+  // Initial position off-screen
+  cursor.style.top = '-100px';
+  cursor.style.left = '-100px';
+
+  // Handle mouse movement
+  document.addEventListener('mousemove', (e) => {
+    cursor.style.top = e.clientY + 'px';
+    cursor.style.left = e.clientX + 'px';
+  });
+
+  // Handle mouse events for interaction states
+  const handleInteraction = (elements, className, action) => {
+    elements.forEach(element => {
+      element.addEventListener('mouseenter', () => {
+        cursor.classList.add(className);
+      });
+
+      element.addEventListener('mouseleave', () => {
+        cursor.classList.remove(className);
+      });
+
+      if (action) {
+        element.addEventListener('mousedown', () => {
+          cursor.classList.add(action);
+        });
+
+        element.addEventListener('mouseup', () => {
+          cursor.classList.remove(action);
+        });
+      }
+    });
+  };
+
+  // Add specific behaviors for different elements
+  handleInteraction(document.querySelectorAll('a, button, .btn, .social-icon, .project-link'), 'cursor-hover');
+  handleInteraction(document.querySelectorAll('input, textarea'), 'cursor-text');
+
+  // Hide cursor when leaving the window
+  document.addEventListener('mouseout', (e) => {
+    if (e.relatedTarget === null) {
+      cursor.style.opacity = '0';
+    }
+  });
+
+  document.addEventListener('mouseover', () => {
+    cursor.style.opacity = '1';
+  });
+
+  // Click animation
+  document.addEventListener('mousedown', () => {
+    cursor.style.transform = 'translate(-50%, -50%) scale(0.8)';
+  });
+
+  document.addEventListener('mouseup', () => {
+    cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+  });
+
+  // Detect if using a touch device and disable custom cursor
+  function isTouchDevice() {
+    return (('ontouchstart' in window) ||
+       (navigator.maxTouchPoints > 0) ||
+       (navigator.msMaxTouchPoints > 0));
+  }
+
+  if (isTouchDevice()) {
+    document.body.style.cursor = 'auto';
+    cursor.style.display = 'none';
+  }
 }
 </script>
 
