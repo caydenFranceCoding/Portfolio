@@ -168,7 +168,46 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    <script src="projects.js"></script>
+    <script>
+// Inline script to verify JavaScript execution
+console.log("Inline JavaScript in projects.html is working");
+
+// Create a visual indicator
+const testDiv = document.createElement('div');
+testDiv.textContent = "Inline JavaScript works!";
+testDiv.style.position = "fixed";
+testDiv.style.bottom = "60px";
+testDiv.style.right = "20px";
+testDiv.style.background = "blue";
+testDiv.style.color = "white";
+testDiv.style.padding = "10px";
+testDiv.style.borderRadius = "5px";
+testDiv.style.zIndex = "9999";
+document.body.appendChild(testDiv);
+
+// Load the external script manually
+const script = document.createElement('script');
+script.src = 'minimal-projects.js';
+script.onload = function() {
+  console.log("External script loaded successfully");
+};
+script.onerror = function() {
+  console.error("Failed to load external script");
+  
+  const errorDiv = document.createElement('div');
+  errorDiv.textContent = "Failed to load external JavaScript!";
+  errorDiv.style.position = "fixed";
+  errorDiv.style.bottom = "100px";
+  errorDiv.style.right = "20px";
+  errorDiv.style.background = "red";
+  errorDiv.style.color = "white";
+  errorDiv.style.padding = "10px";
+  errorDiv.style.borderRadius = "5px";
+  errorDiv.style.zIndex = "9999";
+  document.body.appendChild(errorDiv);
+};
+document.body.appendChild(script);
+</script>
 
 
 </body>
